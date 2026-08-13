@@ -1,0 +1,6 @@
+{
+  "name": "Namira's Birthday & Milestone Journey",
+  "description": "A romantic birthday celebration app for Namira Fisilmi Yasmin with memory gallery, greetings, and 7-Day & Milestone Check-in challenges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
