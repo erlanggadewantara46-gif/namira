@@ -494,7 +494,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-rose-950/20 text-slate-800 font-sans flex flex-col">
+    <div className="min-h-screen bg-rose-950/20 text-slate-800 font-sans flex flex-col" style={{ minHeight: '-webkit-fill-available' }}>
       {/* Background Audio Source */}
       <audio
         ref={audioRef}
@@ -513,7 +513,7 @@ export default function App() {
       />
 
       {/* App Body Content Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24 sm:pb-8 main-content">
         {isLoading || !appState ? (
           <div className="flex flex-col items-center justify-center py-20 text-rose-800 space-y-3">
             <div className="w-10 h-10 border-4 border-rose-300 border-t-rose-600 rounded-full animate-spin" />
@@ -593,8 +593,8 @@ export default function App() {
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="bg-rose-950 text-rose-200/80 text-xs py-6 border-t border-rose-900/60 text-center space-y-1">
+      {/* Footer hidden on mobile PWA, shown on desktop */}
+      <footer className="hidden sm:block bg-rose-950 text-rose-200/80 text-xs py-6 border-t border-rose-900/60 text-center space-y-1">
         <p className="font-semibold">
           Dibuat dengan seluruh cinta oleh <span className="text-rose-100">Erlangga Dewantara</span> khusus untuk <span className="text-pink-200 font-bold">Namira Fisilmi Yasmin</span> ❤️
         </p>

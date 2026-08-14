@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+/* ================================
+   iOS PWA Safe Area & Base Fixes
+   ================================ */
+
+:root {
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+}
+
+html {
+  height: -webkit-fill-available;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent text selection on buttons/nav */
+button, a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Hide scrollbar tapi tetap bisa scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ================================
+   Navbar Safe Area (notch fix)
+   ================================ */
+.navbar-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* ================================
+   Bottom Nav Safe Area (home bar fix)
+   ================================ */
+.bottom-nav-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ================================
+   Main Content Safe Area
+   ================================ */
+.main-content {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
